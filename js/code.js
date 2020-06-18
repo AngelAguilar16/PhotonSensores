@@ -4,14 +4,15 @@ var volt = 0;
 var token;
 
 function variables(){
-    particle.login({username: 'USERNAME', password: 'PASSWORD'}).then(
+    particle.login({username: 'sgarcia44@ucol.mx', password: 'kakaroto26485'}).then(
     function(data) {
         token = data.body.access_token;
+        console.log(token);
         var devicesPr = particle.listDevices({ auth: token });
         devicesPr.then(
             function(devices){
             console.log('Devices: ', devices);
-                particle.getVariable({ deviceId: 'DEVICEID', name: 'VARIABLE', auth: token }).then(function(data) {
+                particle.getVariable({ deviceId: '350024000947373336323230', name: 'temp', auth: token }).then(function(data) {
                     console.log('Device variable retrieved successfully:', data);
                     temp = data.body.result;
                     console.log("Temp: " + data.body.result);
@@ -20,7 +21,7 @@ function variables(){
                 function(err) {
                     console.log('An error occurred while getting attrs:', err);
                 });
-                particle.getVariable({ deviceId: 'DEVICEID', name: 'VARIABLE', auth: token }).then(function(data) {
+                particle.getVariable({ deviceId: '350024000947373336323230', name: 'volt', auth: token }).then(function(data) {
                     console.log('Device variable retrieved successfully:', data);
                     volt = data.body.result;
                     console.log("Volt: " + data.body.result);
@@ -40,7 +41,7 @@ function variables(){
     }
     );
 }
-//setInterval(variables, 1000);
+setInterval(variables, 1000);
 
 google.charts.load('current', {'packages':['gauge']});
 google.charts.setOnLoadCallback(drawChartTemp);

@@ -1,17 +1,31 @@
-body{
-    margin: 0 auto;
-}
-
 #menu-card{
     width: 300px;
-    margin-top: 10%;
-    margin-left: 12%;
+    margin-top: 8%;
+    margin-left: 11%;
     height: 100%;
-    padding-right: 0;
 }
 
 #chart_div, #chart_div2{
     margin: 0 auto;
     text-align: center;
-    margin-left: 15%;
+    margin-left: 13%;
+}
+
+th, td, p, input {
+    font:14px Verdana;
+}
+table, th, td 
+{
+    border: solid 1px #DDD;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    text-align: center;
+    margin: 0 auto;
+}
+th {
+    font-weight:bold;
+}
+
+@media screen and (max-width: 480px) {
+    
 }
