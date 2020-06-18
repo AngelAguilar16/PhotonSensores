@@ -1,10 +1,17 @@
 body{
-    
+    margin: 0 auto;
 }
 
 #menu-card{
     width: 300px;
-    margin: 1% 0;
+    margin-top: 10%;
+    margin-left: 12%;
     height: 100%;
     padding-right: 0;
+}
+
+#chart_div, #chart_div2{
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 15%;
 }
